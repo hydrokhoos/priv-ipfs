@@ -17,6 +17,8 @@ cd priv-ipfs
 > **Note**: [Go](https://go.dev/doc/install "Go installation") needs to be installed first.
 ```bash
 go install github.com/Kubuxu/go-ipfs-swarm-key-gen/ipfs-swarm-key-gen@latest
+mkdir PC
+touch PC/swarm.key
 ipfs-swarm-key-gen > ./PC/swarm.key
 # If you encounter an issue:
 $(go env GOPATH)/bin/ipfs-swarm-key-gen > ./PC/swarm.key
