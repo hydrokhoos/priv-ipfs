@@ -19,30 +19,22 @@ cd priv-ipfs
 go install github.com/Kubuxu/go-ipfs-swarm-key-gen/ipfs-swarm-key-gen@latest
 mkdir PC
 touch PC/swarm.key
-ipfs-swarm-key-gen > ./PC/swarm.key
-# If you encounter an issue:
 $(go env GOPATH)/bin/ipfs-swarm-key-gen > ./PC/swarm.key
 ```
 
 ### 3. Deploy containers using Containerlab
 > **Note**: Ensure you have [Containerlab](https://containerlab.dev/install/ "containerlab installation") installed.
 ```bash
-docker build -t ipfs-test .
 sudo clab deploy -t priv-ipfs.yaml
 ```
 
-### 4. Start up PCs
-```bash
-./startupPCs.sh
-```
-
-### 5. Check IPFS
+### 4. Check IPFS
 ```bash
 docker exec clab-priv-ipfs-PC1 ipfs swarm peers
 # Should return nothing initially.
 ```
 
-### 6. Add bootstrap nodes
+### 5. Add bootstrap nodes
 ```bash
 ./addBootstrap.sh
 ```
@@ -52,7 +44,7 @@ added /ip4/192.168.12.2/tcp/4001/p2p/12D3KooWLq1iApFjaWd2shtC2rUNNGAhvd5gFKHYEdY
 added /ip4/192.168.13.2/tcp/4001/p2p/12D3KooWKRVxsh1JgcxeHW7k7URRoemrfHKYcoZ9qzyTAhdCQwz6
 ```
 
-### 7. Check IPFS
+### 6. Check IPFS
 > **Note**: This step might take a little time.
 ```bash
 docker exec clab-priv-ipfs-PC1 ipfs swarm peers

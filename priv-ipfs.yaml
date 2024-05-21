@@ -23,7 +23,7 @@ topology:
 
     PC1:
       kind: linux
-      image: ipfs-test
+      image: hydrokhoos/ipfs-test:202405181448
       binds:
       - PC/swarm.key:/swarm.key
       - ./pub_testcontents.sh:/pub_testcontents.sh
@@ -33,7 +33,7 @@ topology:
         MY_IP: "192.168.11.2"
     PC2:
       kind: linux
-      image: ipfs-test
+      image: hydrokhoos/ipfs-test:202405181448
       binds:
       - PC/swarm.key:/swarm.key
       - ./get_testcontents.sh:/get_testcontents.sh
@@ -43,7 +43,7 @@ topology:
         MY_IP: "192.168.12.2"
     PC3:
       kind: linux
-      image: ipfs-test
+      image: hydrokhoos/ipfs-test:202405181448
       binds:
       - PC/swarm.key:/swarm.key
       env:
