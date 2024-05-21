@@ -63,7 +63,7 @@ docker exec clab-priv-ipfs-PC1 ipfs swarm peers
 /ip4/192.168.13.2/tcp/4001/p2p/12D3KooWKRVxsh1JgcxeHW7k7URRoemrfHKYcoZ9qzyTAhdCQwz6
 ```
 
-## Usage
+## Usage 1
 ### 1. Provide from PC1
 ```bash
 docker exec clab-priv-ipfs-PC1 sh -c 'echo "Hello, world!" | ipfs add'
@@ -80,6 +80,25 @@ docker exec clab-priv-ipfs-PC3 ipfs cat QmeeLUVdiSTTKQqhWqsffYDtNvvvcTfJdotkNyi1
 
 ```plain text
 Hello, world!
+```
+
+## Usage 2
+### 1. Adding contents
+```bash
+docker exec -it clab-priv-ipfs-PC1 bash
+./pub_testcontents.sh
+```
+
+### 2. Find provider and peer
+```bash
+docker exec -it clab-priv-ipfs-PC2 bash
+./get_testcontents.sh
+```
+
+### 3. Check results
+Measurement results are saved in ```clab-priv-ipfs-PC2:/ipfs-find-provs-peer.csv```
+```bash
+docker cp clab-priv-ipfs-PC2:/ipfs-find-provs-peer.csv .
 ```
 
 ## Destroy

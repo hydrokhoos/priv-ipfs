@@ -26,6 +26,7 @@ topology:
       image: ipfs-test
       binds:
       - PC/swarm.key:/swarm.key
+      - ./pub_testcontents.sh:/pub_testcontents.sh
       env:
         IPFS_SWARM_KEY: /swarm.key
         GATEWAY_IP: "192.168.11.1"
@@ -35,6 +36,7 @@ topology:
       image: ipfs-test
       binds:
       - PC/swarm.key:/swarm.key
+      - ./get_testcontents.sh:/get_testcontents.sh
       env:
         IPFS_SWARM_KEY: /swarm.key
         GATEWAY_IP: "192.168.12.1"
